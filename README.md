@@ -34,7 +34,6 @@ module.exports = {
       node {
         id
         title
-        name
         rendered_body
         body
         comments_count
