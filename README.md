@@ -19,6 +19,8 @@ module.exports = {
       options: {
         accessToken: `YOUR_PERSONAL_ACCESS_TOKEN`,
         userName: `YOUR_UAWE_NAME`,
+        // (optional) default is false.
+        fetchPrivate: false
       }
     }
   ]
