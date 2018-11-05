@@ -7,7 +7,8 @@ exports.sourceNodes = async ({
 }, {
   accessToken,
   userName,
-  fetchPrivate = false
+  fetchPrivate = false,
+  excludedPostIds = []
 }) => {
   // オプションチェック
   if (!accessToken) {
@@ -54,24 +55,27 @@ exports.sourceNodes = async ({
 
 
   // ノード登録
-  posts.forEach(post => {
+  posts
+    // オプションで指定された記事を除外
+    .filter(post => !excludedPostIds.includes(post.id))
+    .forEach(post => {
 
-    const contentDigest = crypto
-          .createHash(`md5`)
-          .update(JSON.stringify(post))
-          .digest('hex')
+      const contentDigest = crypto
+            .createHash(`md5`)
+            .update(JSON.stringify(post))
+            .digest('hex')
 
-    actions.createNode({
-      ...post,
-      id: createNodeId(`QiitaPost${post.id}`),
-      children: [],
-      parent: `__SOURCE__`,
-      internal: {
-        type: 'QiitaPost',
-        contentDigest,
-      }
+      actions.createNode({
+        ...post,
+        id: createNodeId(`QiitaPost${post.id}`),
+        children: [],
+        parent: `__SOURCE__`,
+        internal: {
+          type: 'QiitaPost',
+          contentDigest,
+        }
+      })
     })
-  })
 
   return
 }

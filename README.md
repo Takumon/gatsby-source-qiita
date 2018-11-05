@@ -20,7 +20,9 @@ module.exports = {
         accessToken: `YOUR_PERSONAL_ACCESS_TOKEN`,
         userName: `YOUR_UAWE_NAME`,
         // (optional) default is false.
-        fetchPrivate: false
+        fetchPrivate: false,
+        // (optional) default is [].
+        excludedPostIds: ['da8347f81a9f021b637f']
       }
     }
   ]
