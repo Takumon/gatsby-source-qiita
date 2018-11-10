@@ -146,6 +146,6 @@ function _extractHeadingDetails(htmlStr) {
 
 function _isHeaderIdLink(node) {
   return node.tagName === 'a'
-          && c.properties.href
-          && c.properties.href.startsWith('#')
+          && node.properties.href
+          && node.properties.href.startsWith('#')
 }
