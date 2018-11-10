@@ -70,3 +70,9 @@ module.exports = {
   }
 }
 ```
+
+## Sample
+* Demo
+  * https://takumon.github.io/gatsby-starter-qiita/
+* Source
+  * https://github.com/Takumon/gatsby-starter-qiita
