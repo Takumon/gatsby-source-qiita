@@ -19,9 +19,12 @@ module.exports = {
       options: {
         accessToken: `YOUR_PERSONAL_ACCESS_TOKEN`,
         userName: `YOUR_UAWE_NAME`,
-        // (optional) default is false.
+        // (optional)
+        // Default is false.
         fetchPrivate: false,
-        // (optional) default is [].
+        // (optional)
+        // String Array.
+        // Default is [].
         excludedPostIds: ['da8347f81a9f021b637f']
       }
     }
@@ -38,6 +41,16 @@ module.exports = {
       node {
         id
         title
+        headings {
+          value
+          id
+          depth
+          parents {
+            value
+            id
+            depth
+          }
+        }
         rendered_body
         body
         comments_count
@@ -52,7 +65,6 @@ module.exports = {
         user {
           id
         }
-        page_views_count
       }
     }
   }

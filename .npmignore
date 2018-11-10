@@ -1,3 +1,6 @@
-/src
-/node_modules
-index.js
+# Logs
+logs
+*.log
+
+src
+node_modules

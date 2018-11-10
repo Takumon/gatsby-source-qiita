@@ -1,14 +1,20 @@
 {
   "name": "gatsby-source-qiita",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Gatsby source plugin for building websites using Qiita as a data source.",
   "author": "Takumon",
   "homepage": "https://github.com/Takumon/gatsby-source-qiita",
   "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.0.33"
+  },
   "main": "gatsby-node.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Takumon/gatsby-source-qiita"
+  },
+  "bugs": {
+    "url": "https://github.com/Takumon/gatsby-source-qiita/issues"
   },
   "keywords": [
     "gatsby",
@@ -18,14 +24,21 @@
   ],
   "scripts": {
     "build": "babel src --out-dir .",
+    "prepare": "cross-env NODE_ENV=production npm run build",
     "prepublish": "npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0"
+    "babel-preset-gatsby-package": "^0.1.2",
+    "cross-env": "^5.2.0"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "@babel/runtime": "^7.1.5",
+    "axios": "^0.18.0",
+    "hast-util-to-string": "^1.0.1",
+    "rehype": "^6.0.0",
+    "unified": "^7.0.1",
+    "unist-util-visit": "^1.4.0"
   }
 }

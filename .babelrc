@@ -1,11 +1,5 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env", {
-        "targets": {
-          "node": "8.10"
-        }
-      }
-    ]
+  "presets" : [
+    ["babel-preset-gatsby-package"]
   ]
 }
